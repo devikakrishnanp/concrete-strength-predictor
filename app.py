@@ -11,9 +11,9 @@ st.set_page_config(
 
 # --- Load the Trained Model ---
 try:
-    model = joblib.load("best_model.pkl")
+    model = joblib.load("best_model (1).pkl")
 except FileNotFoundError:
-    st.error("Model file not found. Make sure 'best_model.pkl' is in the root of the repository.")
+    st.error("Model file not found. Make sure 'best_model (1).pkl' is in the root of the repository.")
     st.stop()
 
 # --- App Title and Description ---
