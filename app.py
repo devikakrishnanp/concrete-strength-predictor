@@ -27,14 +27,15 @@ st.write(
 st.sidebar.header("Input Concrete Components")
 
 def user_input_features():
-    cement = st.sidebar.slider('Cement (kg in a m³ mix)', 102.0, 540.0, 320.0, 1.0)
-    slag = st.sidebar.slider('Blast Furnace Slag (kg in a m³ mix)', 0.0, 359.4, 120.0, 1.0)
-    fly_ash = st.sidebar.slider('Fly Ash (kg in a m³ mix)', 0.0, 200.1, 50.0, 1.0)
-    water = st.sidebar.slider('Water (kg in a m³ mix)', 121.8, 247.0, 180.0, 1.0)
-    superplasticizer = st.sidebar.slider('Superplasticizer (kg in a m³ mix)', 0.0, 32.2, 6.0, 0.1)
-    coarse_agg = st.sidebar.slider('Coarse Aggregate (kg in a m³ mix)', 801.0, 1145.0, 970.0, 1.0)
-    fine_agg = st.sidebar.slider('Fine Aggregate (kg in a m³ mix)', 594.0, 992.6, 770.0, 1.0)
-    age = st.sidebar.slider('Age (days)', 1, 365, 28, 1)
+    cement = st.sidebar.number_input('Cement (kg in a m³ mix)', min_value=0.0, max_value=800.0, value=320.0, step=0.1)
+    slag = st.sidebar.number_input('Blast Furnace Slag (kg in a m³ mix)', min_value=0.0, max_value=800.0, value=120.0, step=0.1)
+    fly_ash = st.sidebar.number_input('Fly Ash (kg in a m³ mix)', min_value=0.0, max_value=300.0, value=50.0, step=0.1)
+    water = st.sidebar.number_input('Water (kg in a m³ mix)', min_value=0.0, max_value=400.0, value=180.0, step=0.1)
+    superplasticizer = st.sidebar.number_input('Superplasticizer (kg in a m³ mix)', min_value=0.0, max_value=50.0, value=6.0, step=0.1)
+    coarse_agg = st.sidebar.number_input('Coarse Aggregate (kg in a m³ mix)', min_value=0.0, max_value=1200.0, value=970.0, step=0.1)
+    fine_agg = st.sidebar.number_input('Fine Aggregate (kg in a m³ mix)', min_value=0.0, max_value=1200.0, value=770.0, step=0.1)
+    age = st.sidebar.number_input('Age (days)', min_value=1, max_value=365, value=28, step=1)
+
 
     data = {
         'cement': cement,
